@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Cottage Home - Henryków, Poland | For Sale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .price-tag {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            margin-top: 1rem;
+            border-radius: 8px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .price-tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .description {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+            line-height: 1.8;
+        }
+
+        .description h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-bottom: 3px solid #34495e;
+            padding-bottom: 1rem;
+        }
+
+        .description p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .feature-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .location-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+        }
+
+        .location-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .location-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .location-item:hover {
+            background: #ecf0f1;
+        }
+
+        .location-item strong {
+            color: #2c3e50;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .price-tag {
+                font-size: 1.4rem;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .description {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Piękny Dom w Stylu Cottage</h1>
+        <p>Henryków • Zduńska Wola • Polska</p>
+        <div class="price-tag">799 000 PLN</div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Image -->
+        <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/exterior-01.jpg" alt="House exterior" class="hero-image">
+
+        <!-- Photo Gallery -->
+        <h2 style="color: #2c3e50; margin-top: 3rem; margin-bottom: 1rem; text-align: center; font-weight: 600; border-bottom: 3px solid #34495e; padding-bottom: 1rem; display: inline-block; width: 100%;">Galeria zdjęć</h2>
+        <div class="gallery">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/exterior-01.jpg" alt="Exterior view 1" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/exterior-02.jpg" alt="Exterior view 2" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/exterior-03.jpg" alt="Exterior view 3" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/kitchen-fireplace-01.jpg" alt="Kitchen and fireplace" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/kitchen-fireplace-02.jpg" alt="Kitchen details" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/kitchen-fireplace-03.jpg" alt="Fireplace" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/living-room-01.jpg" alt="Living room" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/living-room-02.jpg" alt="Living room detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/living-room-03.jpg" alt="Dining area" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bedroom-master-01.jpg" alt="Master bedroom" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bedroom-master-02.jpg" alt="Master bedroom detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bedroom-master-03.jpg" alt="Bedroom view" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bedroom-child-01.jpg" alt="Children's room" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bedroom-child-02.jpg" alt="Children's room detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bathroom-01.jpg" alt="Bathroom" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bathroom-02.jpg" alt="Bathroom details" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bathroom-03.jpg" alt="Bathroom" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/bathroom-04.jpg" alt="Bathroom" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/entrance-01.jpg" alt="Entrance" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/entrance-02.jpg" alt="Entrance detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/entrance-03.jpg" alt="Entrance view" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/entrance-04.jpg" alt="Interior entrance" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/kitchen-fireplace-04.jpg" alt="Kitchen detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/office-01.jpg" alt="Office room" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/office-02.jpg" alt="Office detail" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/garden-01.jpg" alt="Garden" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/garden-02.jpg" alt="Garden area" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/balcony.jpg" alt="Balcony" onclick="openModal(this.src)">
+            <img src="https://res.cloudinary.com/df4tupotg/image/upload/v1772578484/technical-room.jpg" alt="Technical room" onclick="openModal(this.src)">
+        </div>
+
+        <!-- Property Description -->
+        <div class="description">
+            <h2>O tym wyjątkowym domu</h2>
+            <p>
+                Szanowni Państwo, w związku z zakupem innej nieruchomości i w innej miejscowości oferujemy na sprzedaż nasz wspólny dom o powierzchni użytkowej 92,09 m², posadowiony na działce o powierzchni 1200 m² w cenie 799000 pln.
+            </p>
+            <p>
+                Dom zaprojektowany w stylu cottage country house przez architekta Macieja Mazeranta z Pracowni Architektonicznej KRESKA w Łodzi. Nieruchomość znajduje się we wsi Henryków, gminie Zduńska Wola przy ulicy Miodowej. Do działki przynależy udział w drodze wewnętrznej.
+            </p>
+            <p>
+                Dom jest wolnostojący, jednopiętrowy z poddaszem nieużytkowym o wymiarach zewnętrznych 8,20 x 13,80 i wysokości do kalenicy 5,5 m. Obiekt został oddany do użytku w 2024 r. Wpisany do ewidencji budynków pod nr 101904_2.0031.247_BUD.
+            </p>
+            <p>
+                Budynek składa się z przedsionka, pomieszczenia gospodarczego, hallu, trzech pokoi oraz salonu z częścią jadalną, kuchnią, łazienką. W sypialni garderoba.
+            </p>
+        </div>
+
+        <!-- Key Features -->
+        <h2 style="color: #2c3e50; margin: 2rem 0 1rem 0; text-align: center; font-weight: 600; border-bottom: 3px solid #34495e; padding-bottom: 1rem; display: inline-block; width: 100%;">Główne cechy domu</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Budowa i materiały</h3>
+                <ul>
+                    <li>Bloczki gazobeton z izolacją styropianem</li>
+                    <li>Dachówka ceramiczna od firmy Toza Markovic (Bałkany)</li>
+                    <li>Belki drewniane (sosna i świerk)</li>
+                    <li>Deski świerkowe wykonane przez górali</li>
+                    <li>Parkiet dębowy klasa country</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Okna i drzwi</h3>
+                <ul>
+                    <li>Okna drewniane z pakietem trzyszybowym</li>
+                    <li>Szprosami wiedeńskie z idealną izolacją termiczną</li>
+                    <li>Trzy warstwy ochronne: impregnant, farba, lakier</li>
+                    <li>Drzwi wewnętrzne z litego drewna sosnowego</li>
+                    <li>Drzwi zewnętrzne z litego drewna, szczelne</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Ogrzewanie i komfort</h3>
+                <ul>
+                    <li>Kocioł na ekogroszek o mocy 10,5 kW</li>
+                    <li>Możliwość palenia peletami</li>
+                    <li>Kominek typu koza o mocy 10,5 kW</li>
+                    <li>Grzejniki aluminiowe (szybki rozgrzew)</li>
+                    <li>1,5 tony ekogroszku lub 6 m³ drewna olchowego rocznie</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Pomieszczenia</h3>
+                <ul>
+                    <li>Przedsionek z garderobaą</li>
+                    <li>Pomieszczenie gospodarcze</li>
+                    <li>Trzy sypialnie</li>
+                    <li>Sypialnia główna z garderobą</li>
+                    <li>Salon z jadalnią i kuchnią</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Kuchnia i łazienka</h3>
+                <ul>
+                    <li>Nowoczesna kuchnia Ikea z blatem z bukowego drewna</li>
+                    <li>Ceramiczny zlewozmywak</li>
+                    <li>Urządzenia AGD firmy Amica</li>
+                    <li>Armatura mosiężna w całym domu</li>
+                    <li>W pełni wyposażona łazienka</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Ogród i na zewnątrz</h3>
+                <ul>
+                    <li>60 m² wyłożone kostką granitową</li>
+                    <li>Brama automatyczna z kodowaniem i chipem</li>
+                    <li>Naturalny ogród ze świerkami, sosnami, brzozami i dębami</li>
+                    <li>Drewniany taras 12 m²</li>
+                    <li>Drewniany domek narzędziowy z drewutnią</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Media i infrastruktura</h3>
+                <ul>
+                    <li>Przydomowa oczyszczalnia ścieków drenażowa</li>
+                    <li>Kamera z kartą SIM (stałe połączenie internetowe)</li>
+                    <li>Przyłącze wodociągowe: JAN-POL</li>
+                    <li>Światłowód dostępny na sąsiedniej ulicy</li>
+                    <li>Planowany montaż światłowodu na ulicy Miodowej</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Cechy specjalne</h3>
+                <ul>
+                    <li>Zbudowany bez kredytów bankowych</li>
+                    <li>Bez pożyczek od rodziny czy darowizn</li>
+                    <li>Bez widocznych obciążeń</li>
+                    <li>Meble do negocjacji</li>
+                    <li>Ekologiczny i zrównoważony design</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Location Information -->
+        <div class="location-section">
+            <h2>Lokalizacja i usługi</h2>
+            <div class="location-grid">
+                <div class="location-item">
+                    <strong>📍 Wieś:</strong> Henryków, ze znaczeństwem historycznym datowanym na 1914 rok podczas WWI
+                </div>
+                <div class="location-item">
+                    <strong>🏘️ Gmina:</strong> Zduńska Wola, z trwającym rozwojem zabudowy mieszkaniowej
+                </div>
+                <div class="location-item">
+                    <strong>🚌 Przystanek autobusowy:</strong> 750 metrów - linia nr 7
+                </div>
+                <div class="location-item">
+                    <strong>🏬 Sklep spożywczy:</strong> 2 km
+                </div>
+                <div class="location-item">
+                    <strong>⛪ Kościół:</strong> Kościół św. Józefa na terenie wsi
+                </div>
+                <div class="location-item">
+                    <strong>🎡 Przedszkole:</strong> Trampolina - bardzo rekomendowane
+                </div>
+                <div class="location-item">
+                    <strong>🛍️ Galeria handlowa:</strong> Smart Park planowana na 2027 rok przy Łaskiej 229
+                </div>
+                <div class="location-item">
+                    <strong>👥 Sąsiedzi:</strong> Serdeczni, pomocni i życzliwi, sprzedają świeże jajka i miód
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose This Home -->
+        <div class="description">
+            <h2>Szczegółowe cechy domu</h2>
+            <p>
+                <strong>Wyjątkowa jakość budowy:</strong> Dom wykonany z bloczków gazobetonowych, ocieplony styropianem, obłożony tynkiem silikatowo-silikonowym. Na dachu dachówka ceramiczna z dużą ilością błyszczącego fosforu, wyprodukowana przez firmę Toza Markovic, sprowadzona z krajów bałkańskich.
+            </p>
+            <p>
+                <strong>Trwałość i ekologia:</strong> Dachówka ceramiczna wyróżnia się swoją trwałością, estetyką oraz ekologicznymi właściwościami. Żywotność dachówki wynosi ponad 100 lat. Dachówka jest odporna na działanie ciepła, mrozu, promieniowania ultrafioletowego i doskonale znosi wahania temperatury.
+            </p>
+            <p>
+                <strong>Doskonała izolacja:</strong> Dom wyposażony jest w okna drewniane z pakietem trzyszybowym, szprosami wiedeńskie, pokryte trzema warstwami: impregnatem, farbą i lakierem. Strop wykonany z drewna z dodatkowymi dwiema warstwami wełny mineralnej zapewnia doskonałą izolację termiczną i akustyczną.
+            </p>
+            <p>
+                <strong>Naturalne i drewniane:</strong> Wszystkie podłogi drewniane - parkiet dębowy klasy country, lakierowany fabrycznie. Strop z belek drewnianych sosnowych i świerkowych oraz desek świerkowych wykonanych przez górali. Strych idealny do przechowywania rzeczy.
+            </p>
+            <p>
+                <strong>Nowoczesne wyposażenie:</strong> Meble Ikea z blatem z litego drewna bukowego, zlew ceramiczny. Wyposażenie AGD polskiej firmy Amica. Armatura mosiężna w całym domu. Drzwi wewnętrzne z litego drewna sosnowego, pokryte farbą akrylową.
+            </p>
+            <p>
+                <strong>Zagospodarowanie terenu:</strong> Przed domem wyłożono 60 m² powierzchni kostką granitową szaro-rudą z kopalni w Strzegomiu. Brama otwierana automatycznie, furtka na kod i chip. Teren działki częściowo zalesiono świerkami, sosnami, brzozami oraz dzięki sójkom dębami.
+            </p>
+            <p>
+                <strong>Bezpieczeństwo i technologia:</strong> Na domu kamera z kartą SIM czyli stałym łączem internetowym. W sąsiedniej ulicy łącze światłowodowe. Na Miodowej planowany jest montaż światłowodu ziemią.
+            </p>
+            <p>
+                <strong>Zrównoważony system:</strong> Przydomowa oczyszczalnia ścieków drenażowa - nie wymaga opróżniania, wymaga sukcesywnego zasilania bakteriami. Na obszarze, gdzie mieści się oczyszczalnia, co roku wysiewana była facelia dla pszczół. Drewniany domek narzędziowy z drewutnią, pod którym zimują dwa jeże.
+            </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Chcesz zobaczyć ten piękny dom?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+                Zapraszamy do kontaktu i umówienia się na wizytę!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Kasia & Marcin</h3>
+                    <p>+48 791 771 77</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
+                Serdecznie zapraszamy do kontaktu. Ten wyjątkowy dom czeka na nowych właścicieli!
+            </p>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Modal image">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ogłoszenie o sprzedaży pięknego domu. Henryków, Polska.</p>
+        <p>Nieruchomość prezentowana przez Kasię i Marcina</p>
+    </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
