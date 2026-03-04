@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Piękny Dom w Stylu Cottage - Henryków | Sprzedaż</title>
+    <title>Klimatyczny Dom w Stylu Cottage - Henryków | Sprzedaż</title>
     <link rel="preconnect" href="https://res.cloudinary.com" />
     <link
       rel="icon"
@@ -331,7 +331,9 @@
 
       .modal-content img {
         width: 100%;
+        object-fit: contain;
         height: auto;
+        max-height: 90vh;
         border-radius: 8px;
       }
 
@@ -360,7 +362,7 @@
   </head>
   <body>
     <header>
-      <h1>Piękny Dom w Stylu Cottage</h1>
+      <h1>Klimatyczny Dom w Stylu Cottage</h1>
       <p>Henryków • Zduńska Wola • Polska</p>
       <div class="price-tag">799 000 PLN</div>
     </header>
@@ -368,7 +370,7 @@
     <div class="container">
       <!-- Hero Image -->
       <img
-        src="https://res.cloudinary.com/df4tupotg/image/upload/f_auto,q_auto,w_1200/v1772578484/exterior-01.jpg"
+        src="https://res.cloudinary.com/df4tupotg/image/upload/f_auto,q_auto,w_1200/v1772578484/exterior-02.jpg"
         alt="House exterior"
         class="hero-image"
         loading="lazy"
@@ -391,12 +393,6 @@
         Galeria zdjęć
       </h2>
       <div class="gallery">
-        <img
-          data-src="https://res.cloudinary.com/df4tupotg/image/upload/f_auto,q_auto,w_500/v1772578484/exterior-01.jpg"
-          alt="Exterior view 1"
-          class="lazy-load"
-          onclick="openModal(this.dataset.src)"
-        />
         <img
           data-src="https://res.cloudinary.com/df4tupotg/image/upload/f_auto,q_auto,w_500/v1772578484/exterior-02.jpg"
           alt="Exterior view 2"
